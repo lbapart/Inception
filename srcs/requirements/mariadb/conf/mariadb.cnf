@@ -1,25 +1,8 @@
-[client-server]
-# Uncomment these if you want to use a nonstandard connection to MariaDB
-datadir=/var/lib/mysql
-bind_address=*
-socket=/run/mysqld/mysqld.sock
-port=3306
-
-# This will be passed to all MariaDB clients
-[client]
-password=admin
-
-# The MariaDB server
 [mysqld]
-# Directory where you want to put your data
-data=/usr/local/mysql/var
-# Directory for the errmsg.sys file in the language you want to use
-language=/usr/local/share/mysql/english
-
-# This is the prefix name to be used for all log, error and replication files
-log-basename=mysqld
-log_error=/usr/local/mysql/var/mysqld.err
-
-# Enable logging by default to help find problems
-general-log
-log-slow-queries
+datadir = /var/lib/mysql
+socket  = /run/mysqld/mysqld.sock
+bind_address=*
+port = 3306
+[client]
+user = root42
+password = Qwerty123!
