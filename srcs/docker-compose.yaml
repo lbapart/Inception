@@ -12,6 +12,6 @@ services:
     # depends_on:
     #   - wordpress
     volumes:
-      - ./requirements/nginx/conf/:/etc/nginx/
+      - ./requirements/nginx/conf:/etc/nginx/
       - ./requirements/nginx/certs:/etc/nginx/ssl
     
