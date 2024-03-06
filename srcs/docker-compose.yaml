@@ -14,4 +14,19 @@ services:
     volumes:
       - ./requirements/nginx/conf:/etc/nginx/
       - ./requirements/nginx/certs:/etc/nginx/ssl
+  mariadb:
+    build:
+      context: .
+      dockerfile: requirements/mariadb/Dockerfile
+      args:
+      - DB_NAME=${DB_NAME}
+      - DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - DB_USERNAME1=${DB_USERNAME1}
+      - DB_PASSWORD1=${DB_PASSWORD1}
+    restart: always
+    container_name: mariadb
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./requirements/mariadb/data:/var/lib/mysql
     

@@ -1,5 +1,4 @@
 [mysqld]
-datadir = /var/lib/mysql
 bind_address=*
-port = 3306
-user = root42
+skip-host-cache
+skip-name-resolve
