@@ -19,10 +19,12 @@ services:
       context: .
       dockerfile: requirements/mariadb/Dockerfile
       args:
-      - DB_NAME=${DB_NAME}
-      - DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
-      - DB_USERNAME1=${DB_USERNAME1}
-      - DB_PASSWORD1=${DB_PASSWORD1}
+        DB_NAME: ${DB_NAME}
+        DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+        DB_USERNAME1: ${DB_USERNAME1}
+        DB_PASSWORD1: ${DB_PASSWORD1}
+    env_file:
+      - .env
     restart: always
     container_name: mariadb
     ports:
