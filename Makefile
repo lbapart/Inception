@@ -1,24 +1,25 @@
 VOLUME_WP = ~/data/wordpress
 VOLUME_DB = ~/data/mariadb
 VOLUME_DATA = ~/data
-VOLUME_MKDIR_SCRIPT = requirements/wordpress/tools/dir.sh
+VOLUME_MKDIR_SCRIPT = ./srcs/requirements/wordpress/tools/dir.sh
+DOCKER_COMPOSE_FILE = ./srcs/docker-compose.yaml
 all:
 	@bash $(VOLUME_MKDIR_SCRIPT)
-	@docker-compose up -d
+	@docker-compose -f ${DOCKER_COMPOSE_FILE} up -d
 
 build:
 	@bash $(VOLUME_MKDIR_SCRIPT)
-	@docker-compose up -d --build
+	@docker-compose -f ${DOCKER_COMPOSE_FILE} up -d --build
 
 debug:
 	@bash $(VOLUME_MKDIR_SCRIPT)
-	@docker-compose up --build
+	@docker-compose -f ${DOCKER_COMPOSE_FILE} up --build
 
 down:
-	@docker-compose down
+	@docker-compose -f ${DOCKER_COMPOSE_FILE} down
 
 re: down
-	@docker-compose up -d --build
+	@docker-compose -f ${DOCKER_COMPOSE_FILE} up -d --build
 
 clean: down
 	@docker system prune -a
