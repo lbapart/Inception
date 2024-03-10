@@ -7,10 +7,8 @@ RUN apt-get update && \
 RUN rm /etc/nginx/sites-enabled/default
 RUN rm /etc/nginx/nginx.conf
 
-RUN chmod 777 /var/www/html;
+COPY /requirements/nginx/conf/nginx.conf /etc/nginx/nginx.conf
 
-RUN chmod 777 /var/www/html/index.nginx-debian.html;
-
-EXPOSE 443 9000
+EXPOSE 443
 
 CMD ["nginx", "-g", "daemon off;"]

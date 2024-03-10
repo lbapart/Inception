@@ -17,17 +17,23 @@
  *
  * @package WordPress
  */
-define( 'DB_NAME', getenv('DBNAME') );
-define( 'DB_USER', getenv('MDBUSERNAME1') );
-define( 'DB_PASSWORD', getenv('MDBPASSWORD1') );
+define( 'DB_NAME', '' );
+define( 'DB_USER', '' );
+define( 'DB_PASSWORD', '' );
 
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+define( 'FS_METHOD', 'direct' );
+$table_prefix  = 'wp_';
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);
+@ini_set('display_errors', 0);
 
 /* That's all, stop editing! Happy publishing. */
 
