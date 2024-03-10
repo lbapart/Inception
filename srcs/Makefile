@@ -35,4 +35,4 @@ fclean:
 	@sudo rm -rf $(VOLUME_DB)/*
 	@sudo rm -rf $(VOLUME_DATA)
 
-.PHONY	: all build down re clean fclean
+.PHONY	: all build debug down re clean fclean
